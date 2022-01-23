@@ -22,6 +22,11 @@
 - ![IMG_F99F26FA99C8-1 복사본](https://user-images.githubusercontent.com/98244339/150665662-fd69d119-430e-41eb-9ba4-8beff355736e.jpeg)
 
 
+- DropOUT : Overfitting 방지하기 위해 일정 확률로 연결끊기
+- Gradient Vanishing : Activation Function 을 sigmoid 사용했을때, 입력층으로 갈수록 gradient가 업데이트가 안됨 <br /> 
+→ 해결책 : " Activaitaion Function ReLU로 변경 "
+
+
 # Optimization
 - Gradient Descent : gradient를 계산해서 loss를 찾아간다. GD의경우 한번 업데이트 될때, 전체 Train Data를 input으로넣어 전체 error를 구하는데에 시간이 오래듬
 - Stochastic Gradient Descent : 전체 데이터가 아닌 샘플만 가지고 gradient 를 
