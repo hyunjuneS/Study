@@ -11,7 +11,7 @@
 - Linear Classifier 의 loss는 SVM과 Softmax 크게 두종류
 
 ⓐ SVM Loss : MAX ( 0 , 잘못예측한 클래스 점수 - 정답 클래스 점수 +1 )의 합계의 평균 <br /> 
-ⓑ Softmax : 클래스별 로그, 지수, 표준화, 적용 & Cross Entropy 
+ⓑ Softmax : 클래스별 로그, 지수, 표준화, 적용 & Cross Entropy ( 확률 결과 return , 합은 항상 1 ) 
 ![IMG_08EE75FEC7B6-1](https://user-images.githubusercontent.com/98244339/150665381-cc7e1b2b-f622-463b-98b4-ca23508c7cd2.jpeg)
 
 
