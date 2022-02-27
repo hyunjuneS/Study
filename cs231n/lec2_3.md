@@ -1,3 +1,8 @@
+# Nearest Neighbor 
+- Train 단계에서는 아무일도 하지 않고, 단지 모든 데이터를 기억만한다.
+- Test 단계에서는 기억한 데이터중에서 가장 유사한데이터를 찾는다.
+- 비교하는 방법에는 L1 Distance & L2 Distance 가 있다. ( 하기 참조 )
+
 # Image Classifier & Loss Functions
 
 - Manhattan distance (L1) vs Euclidean distance (L2)
