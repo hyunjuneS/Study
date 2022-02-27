@@ -2,10 +2,12 @@
 - Train 단계에서는 아무일도 하지 않고, 단지 모든 데이터를 기억만한다.
 - Test 단계에서는 기억한 데이터중에서 가장 유사한데이터를 찾는다.
 - 비교하는 방법에는 L1 Distance & L2 Distance 가 있다. ( 하기 참조 )
+- Nearest Neighobors 의 단점을 보완하고자 K-Nearest Neigobors 등장 ( 가까운 이웃을 k개만큼 찾고 투표를 통해 결정 )
 
 # Image Classifier & Loss Functions
 
 - Manhattan distance (L1) vs Euclidean distance (L2)
+- L1 Distance는 좌표계에 많은 영향을 받는다. 그래서, 벡터간 요소들이 개별적 의미를 가지고 있다면, L1 Distance가 어울린다.
 ![IMG_CF046D7D79F0-1](https://user-images.githubusercontent.com/98244339/150664933-7639c166-8340-4ca6-92d4-1f8f8918510a.jpeg)
 
 
