@@ -40,19 +40,6 @@
 - RMSProp : ADAGRAD 를 수정한것, ( 기존 누적값에 decay rate를 곱함 )
 - ADAM : Momentum 과 ADAGRAD/RMSProp 합친것
 
-## lr decaying 
-- 위에 Optimization 에는 모두 learning rate 라는 하이퍼파라미터가 존재한다. 
-- lr 하이퍼 파라미터를 잘 잡는것은 매우 어려운일이고 중요한일이다.
-- lr 점점 줄여가는 방법도 사용해 볼 수 있다.
-![스크린샷 2022-02-28 오후 3 42 49](https://user-images.githubusercontent.com/98244339/155936524-a75f794f-a510-4f90-b63c-534debc6b516.png)
-
-## Second-order Optimization 
-- first-order optimization 은 1차 미분값으로 크게 변화할 수 없다.
-![스크린샷 2022-02-28 오후 3 41 12](https://user-images.githubusercontent.com/98244339/155936354-e7366e80-b097-452e-a381-9beab5ee38a3.png)
-- secon-order optimization 에서는 taylor 근사함수를 써서 minima에 더 잘 접근가능하다.
-![스크린샷 2022-02-28 오후 3 41 34](https://user-images.githubusercontent.com/98244339/155936375-f93b4823-60e8-44c1-97da-0939b6772df5.png)
-
-
 
 # Network Training 
 ## Activation Function
@@ -78,10 +65,28 @@
 - Grid Search 와 Random Search 있지만, Random 이 성능 더 좋음
 ![IMG_04FBD192C240-1](https://user-images.githubusercontent.com/98244339/150667069-fdfb9900-d3c4-40fa-bf71-bff1f9b2e12b.jpeg)
 
-## ETC..
-- DropOUT : Overfitting 방지하기 위해 일정 확률로 연결끊기
-- Data Augentation : CNN에서 데이터 약간씩 변형 ( ex. 반전 )
-- 
+## lr decaying 
+- 위에 Optimization 에는 모두 learning rate 라는 하이퍼파라미터가 존재한다. 
+- lr 하이퍼 파라미터를 잘 잡는것은 매우 어려운일이고 중요한일이다.
+- lr 점점 줄여가는 방법도 사용해 볼 수 있다.
+
+![스크린샷 2022-02-28 오후 3 42 49](https://user-images.githubusercontent.com/98244339/155936524-a75f794f-a510-4f90-b63c-534debc6b516.png)
+
+## Second-order Optimization 
+- first-order optimization 은 1차 미분값으로 크게 변화할 수 없다.
+![스크린샷 2022-02-28 오후 3 41 12](https://user-images.githubusercontent.com/98244339/155936354-e7366e80-b097-452e-a381-9beab5ee38a3.png)
+- secon-order optimization 에서는 taylor 근사함수를 써서 minima에 더 잘 접근가능하다.
+![스크린샷 2022-02-28 오후 3 41 34](https://user-images.githubusercontent.com/98244339/155936375-f93b4823-60e8-44c1-97da-0939b6772df5.png)
+
+## Model Ensembles : 모델을 n개 학습시켜서 결과의 평균을 이용하자 
+
+## Dropout : Regularization의 일종으로 Neural Net에서는 L2 보다, Dropout 이용 / forward pass 과정에서 임의로 일부뉴런을 0으로 만드는것 
+![스크린샷 2022-02-28 오후 3 50 40](https://user-images.githubusercontent.com/98244339/155937457-b2b84260-4d30-42eb-9d7e-74bae401f2df.png)
+
+## Transfer Learning 
+- 기존에 개발된 레이어의 features를 가지고와서, 마지막 FC layer 초기화, 가중치행렬 초기화, 모든 레이어들의 가중치 freeze
+
+## Data Augentation : CNN에서 데이터 약간씩 변형 ( ex. 반전 )
 
 # CNN
 - filter란?
