@@ -33,12 +33,25 @@
 
 # Optimization
 - Gradient Descent : gradient를 계산해서 loss를 찾아간다. GD의경우 한번 업데이트 될때, 전체 Train Data를 input으로넣어 전체 error를 구하는데에 시간이 오래듬
-- Stochastic Gradient Descent : 전체 데이터가 아닌 minibatch만 가지고 gradient를 계산해서 내려감 
+- Stochastic Gradient Descent : 전체 데이터가 아닌 minibatch만 가지고 gradient를 계산해서 내려감, 파라미터가 많아졌을때 불균형한 방향이 증가하여 매우 복잡해지고,로컬 minimum 또는 변곡점에서 멈춤 
 - Momentum : SGD에 속도를 붙여서
 - Nesterov : Momentum 은 이전속도의 영향을 받는데, 이전속도 영향 안받게 수정
 - ADAGRAD : 처음에는 빠르게 학습하다가, 근처가서 천천히학습하도록함 ( gradient 의 제곱항을 더해감 )
 - RMSProp : ADAGRAD 를 수정한것, ( 기존 누적값에 decay rate를 곱함 )
 - ADAM : Momentum 과 ADAGRAD/RMSProp 합친것
+
+## lr decaying 
+- 위에 Optimization 에는 모두 learning rate 라는 하이퍼파라미터가 존재한다. 
+- lr 하이퍼 파라미터를 잘 잡는것은 매우 어려운일이고 중요한일이다.
+- lr 점점 줄여가는 방법도 사용해 볼 수 있다.
+![스크린샷 2022-02-28 오후 3 42 49](https://user-images.githubusercontent.com/98244339/155936524-a75f794f-a510-4f90-b63c-534debc6b516.png)
+
+## Second-order Optimization 
+- first-order optimization 은 1차 미분값으로 크게 변화할 수 없다.
+![스크린샷 2022-02-28 오후 3 41 12](https://user-images.githubusercontent.com/98244339/155936354-e7366e80-b097-452e-a381-9beab5ee38a3.png)
+- secon-order optimization 에서는 taylor 근사함수를 써서 minima에 더 잘 접근가능하다.
+![스크린샷 2022-02-28 오후 3 41 34](https://user-images.githubusercontent.com/98244339/155936375-f93b4823-60e8-44c1-97da-0939b6772df5.png)
+
 
 
 # Network Training 
@@ -55,6 +68,7 @@
 ## Weight Initialization 가중치의 초기화가 반드시 필요함, 
 - 초기에 weigth를 Gaussian 함수로 초기화 시켜도, Network가 깊어지면 문제가 생김 
 - 해결하기 위해 Xavier Initialization 을 사용 ( 입출력의 분산을 맞춰줌 )
+- ReLU 에서는 잘 작동하지 않음 ( 반을 죽이니깐 ) / 추가적으로 여러 방법이있는데, 표준편차에서 강의노트에서는 2를 나눠준다
 ![IMG_15037652D26F-1](https://user-images.githubusercontent.com/98244339/150666917-e1ddf3ff-9bb3-42ca-b5f9-d814bbc4550d.jpeg)
 
 ## Batch Normalization : 네트워크 중간중간에 input 값들에 대해 Normalization 을 해줘야한다.
@@ -67,7 +81,7 @@
 ## ETC..
 - DropOUT : Overfitting 방지하기 위해 일정 확률로 연결끊기
 - Data Augentation : CNN에서 데이터 약간씩 변형 ( ex. 반전 )
-
+- 
 
 # CNN
 - filter란?
