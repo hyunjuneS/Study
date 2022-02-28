@@ -41,8 +41,15 @@
 - ADAM : Momentum 과 ADAGRAD/RMSProp 합친것
 
 
-# 성능 향상을 위한 기법
+# Network Training 
 ## Activation Function
+- Sigmoid 가 가진 큰 문제 2가지 : Zero-Centered되지 않음  & 양/음값이 너무 커지면 기울기가 0으로 소실됨 ( Saturation )
+- Zero-Centered : Activation Function 이 Zero-Centered 되어있지 않으면, gradient 값이 음수 or 양수로 치우쳐서 나온다.
+- tanh 는 Zero-centered 되어 Simgoid 문제 많이 해결하지만, Saturation 때문에 여전히 Gradient 가 죽음 ( RNN에서 주로 쓰임 )
+- ReLU 는 양의값에서는 saturation 되지않음(가장 큰 장점) , 계산 빠름 ( 매우쉬워, 잘 사용 , 신경과학적인 측면에서도 많이사용 ) , non - zerocentered / 음의경우에서 saturation 됨 
+- dead ReLu : relu에서 절반만 active됨, 즉 일부만 update 되고 일부는 안됨 , 너무 날뛰는 경우도 발생, ==> Leaky Relu 나옴
+- Gradient Vanishing : Activation Function 을 sigmoid 사용했을때, 입력층으로 갈수록 gradient가 업데이트가 안됨 <br /> 
+   → 해결책 : " Activaitaion Function ReLU로 변경 "
 ![IMG_D0978629FB03-1](https://user-images.githubusercontent.com/98244339/150666080-27c36d73-b052-4125-a58d-09ca20913e7a.jpeg)
 
 ## Weight Initialization 가중치의 초기화가 반드시 필요함, 
@@ -59,8 +66,6 @@
 
 ## ETC..
 - DropOUT : Overfitting 방지하기 위해 일정 확률로 연결끊기
-- Gradient Vanishing : Activation Function 을 sigmoid 사용했을때, 입력층으로 갈수록 gradient가 업데이트가 안됨 <br /> 
-   → 해결책 : " Activaitaion Function ReLU로 변경 "
 - Data Augentation : CNN에서 데이터 약간씩 변형 ( ex. 반전 )
 
 
@@ -84,10 +89,6 @@
 
 # RNN
 - Truncated Backpropagation : batch 만큼 학습시키는것  ( gradient를 근사시키는것 )
-
-
-
-
 
 
 
