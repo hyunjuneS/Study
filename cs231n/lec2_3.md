@@ -11,18 +11,16 @@
 ![IMG_CF046D7D79F0-1](https://user-images.githubusercontent.com/98244339/150664933-7639c166-8340-4ca6-92d4-1f8f8918510a.jpeg)
 
 
-- Linear Classifier : y = wx + b
+# Linear Classifier : y = wx + b
 ![IMG_B931D09E9F5B-1](https://user-images.githubusercontent.com/98244339/150664945-1222acc0-fba4-490b-a1ce-92eb764a7529.jpeg)
 
-
-- Linear Classifier 의 loss는 SVM과 Softmax 크게 두종류
-
+# Linear Classifier 의 loss는 SVM과 Softmax 크게 두종류
 ⓐ SVM Loss : MAX ( 0 , 잘못예측한 클래스 점수 - 정답 클래스 점수 +1 )의 합계의 평균 <br /> 
 ⓑ Softmax : 클래스별 로그, 지수, 표준화, 적용 & Cross Entropy ( 확률 결과 return , 합은 항상 1 ) 
-![IMG_08EE75FEC7B6-1](https://user-images.githubusercontent.com/98244339/150665381-cc7e1b2b-f622-463b-98b4-ca23508c7cd2.jpeg)
+![cs231n_2017_lecture3-1-7](https://user-images.githubusercontent.com/98244339/155905775-700c6a05-3712-47b0-911f-af05913bea83.jpg)
 
 
-- Regularization : Loss에 특정 값을 붙여서 Overfitting 을 방지한다. 
+# Regularization : Loss에 특정 값을 붙여서 Overfitting 을 방지한다. 
 보통 L2 Regularization을 사용한다. 
 ![IMG_1D655079234F-1](https://user-images.githubusercontent.com/98244339/150665307-7b5fc5b4-0dc9-470b-8fd7-27969843164b.jpeg)
 - 아래그림은 딥러닝홀로서기에서 Regularization 에 대한 부가설명으로 그린 그림인데, 이해하기 좋아 첨부
