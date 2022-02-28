@@ -33,10 +33,52 @@
 # Optimization
 - Gradient Descent : gradient를 계산해서 loss를 찾아간다. GD의경우 한번 업데이트 될때, 전체 Train Data를 input으로넣어 전체 error를 구하는데에 시간이 오래듬
 - Stochastic Gradient Descent : 전체 데이터가 아닌 minibatch만 가지고 gradient를 계산해서 내려감 
+- Momentum : SGD에 속도를 붙여서
+- Nesterov : Momentum 은 이전속도의 영향을 받는데, 이전속도 영향 안받게 수정
+- ADAGRAD : 처음에는 빠르게 학습하다가, 근처가서 천천히학습하도록함 ( gradient 의 제곱항을 더해감 )
+- RMSProp : ADAGRAD 를 수정한것, ( 기존 누적값에 decay rate를 곱함 )
+- ADAM : Momentum 과 ADAGRAD/RMSProp 합친것
+
+# CNN
+
+- Activation Function
+![IMG_D0978629FB03-1](https://user-images.githubusercontent.com/98244339/150666080-27c36d73-b052-4125-a58d-09ca20913e7a.jpeg)
+
+- POOLING : fiter가 slide 되면서 계산한것중 최댓값 혹은 평균을 잡아서 사이즈 줄이고 특징을 잡아낸다.
+![IMG_34B68039D87F-1](https://user-images.githubusercontent.com/98244339/150666461-65903c13-20db-4ab6-85c1-62b1c02bf1b3.jpeg)
+
+- Weight Initialization : 가중치의 초기화가 반드시 필요함, 
+( 초기에 weigth를 Gaussian 함수로 초기화 시켜도, Network가 깊어지면 문제가 생김.)
+해결하기 위해 Xavier Initialization 을 사용
+![IMG_15037652D26F-1](https://user-images.githubusercontent.com/98244339/150666917-e1ddf3ff-9bb3-42ca-b5f9-d814bbc4550d.jpeg)
+
+- Batch Normalization : 네트워크 중간중간에 input 값들에 대해 Normalization 을 해줘야한다.
+![IMG_63385333D2D2-1](https://user-images.githubusercontent.com/98244339/150666951-9b117b3f-7e05-461a-81b7-9cb947415e51.jpeg)
+
+- Hyperparameter Optimization : 경험적에 하는것이 대부분이고, 처음에는 넓은범위에서 좁은범위로 좁혀가며 실행
+Grid Search 와 Random Search 있지만, Random 이 성능 더 좋음
+![IMG_04FBD192C240-1](https://user-images.githubusercontent.com/98244339/150667069-fdfb9900-d3c4-40fa-bf71-bff1f9b2e12b.jpeg)
+
+
+# Filter 
+- filter란?
+<img width="669" alt="스크린샷 2022-02-02 오후 5 43 46" src="https://user-images.githubusercontent.com/98244339/152121214-5fd0d2bd-6d90-4d11-bafa-24bb6822401c.png">
+- stride : filter 가 옮겨가는 보폭
+- padding : 가장자리에 값들이 무시되지 않도록 0 을 추가
+- pooling : filter 로 계산한 값들중, 특성치를 뽑기위해 max / average 값을 가져오는것 
+
+
+# RNN
+- Truncated Backpropagation : batch 만큼 학습시키는것  ( gradient를 근사시키는것 )
+
+
+
 
 - DropOUT : Overfitting 방지하기 위해 일정 확률로 연결끊기
 - Gradient Vanishing : Activation Function 을 sigmoid 사용했을때, 입력층으로 갈수록 gradient가 업데이트가 안됨 <br /> 
 → 해결책 : " Activaitaion Function ReLU로 변경 "
+- Data Augentation : CNN에서 데이터 약간씩 변형 ( ex. 반전 )
+
 
 
 
