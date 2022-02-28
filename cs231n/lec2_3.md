@@ -53,8 +53,8 @@
 ![IMG_D0978629FB03-1](https://user-images.githubusercontent.com/98244339/150666080-27c36d73-b052-4125-a58d-09ca20913e7a.jpeg)
 
 ## Weight Initialization 가중치의 초기화가 반드시 필요함, 
-- 초기에 weigth를 Gaussian 함수로 초기화 시켜도, Network가 깊어지면 문제가 생김
-- 해결하기 위해 Xavier Initialization 을 사용
+- 초기에 weigth를 Gaussian 함수로 초기화 시켜도, Network가 깊어지면 문제가 생김 
+- 해결하기 위해 Xavier Initialization 을 사용 ( 입출력의 분산을 맞춰줌 )
 ![IMG_15037652D26F-1](https://user-images.githubusercontent.com/98244339/150666917-e1ddf3ff-9bb3-42ca-b5f9-d814bbc4550d.jpeg)
 
 ## Batch Normalization : 네트워크 중간중간에 input 값들에 대해 Normalization 을 해줘야한다.
