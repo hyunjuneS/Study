@@ -17,8 +17,8 @@
 # Linear Classifier 의 loss는 SVM과 Softmax 크게 두종류
 - SVM Loss : MAX ( 0 , 잘못예측한 클래스 점수 - 정답 클래스 점수 +1 )의 합계의 평균 / 1은 margin 으로 설정가능 / hinge loss
 - Softmax : 스코어 자체애대한 해석은 고려하지 않음 / 클래스별 로그, 지수, 표준화 적용,  Cross Entropy /  확률 결과 return , 합은 항상 1
-![스크린샷 2022-02-28 오전 10 04 15](https://user-images.githubusercontent.com/98244339/155908503-5c984ed1-8e24-4c4c-b5f2-7835d49e47d8.png)
 ![cs231n_2017_lecture3-1-7](https://user-images.githubusercontent.com/98244339/155905775-700c6a05-3712-47b0-911f-af05913bea83.jpg)
+![스크린샷 2022-02-28 오전 10 04 15](https://user-images.githubusercontent.com/98244339/155908503-5c984ed1-8e24-4c4c-b5f2-7835d49e47d8.png)
 
 
 # Regularization : Loss에 특정 값을 붙여서 Overfitting 을 방지한다.( 모델이 Train data에 완벽히 FIT 하지 못하도록 모델의 복잡도에 패널티부여 )
