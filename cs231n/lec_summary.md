@@ -167,7 +167,11 @@
 ![스크린샷 2022-03-01 오전 11 40 31](https://user-images.githubusercontent.com/98244339/156094381-648150e4-5101-4fa5-879c-92fe7b3446fe.png)
 
 ## LSTM 
-- 
+- 한 cell당 2개의 hidden state 가 있음 
+  ( h_t : 기존 RNN의 hidden )
+  ( c_t : LSTM내부에만 존재하며 노출되지 않음 )
+- input x(t) , h(t-1) 을 받고 -> 4개의 gate (i,f,o,g) 생성 -> (i,f,o,g)를 이용하여 c_t 업데이트 -> c_t 이용하여 h_t 업데이트
+![image](https://user-images.githubusercontent.com/98244339/156098881-1a8ca860-678c-4d99-8d0f-af268d4a4ab0.png)
 
 
 
