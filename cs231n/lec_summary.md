@@ -184,4 +184,30 @@
 ![연습장-16](https://user-images.githubusercontent.com/98244339/156103259-d4adce7a-3bdd-4411-828a-1e912c647baf.jpg)
 
 
+# Detection & Segmentation
+![image](https://user-images.githubusercontent.com/98244339/156113335-4954c44c-d7c8-4d50-b06f-d042cea7f49c.png)
+
+## Sementic Segmentation 
+- 주로 마지막 FC-Layer 제외하고 conv만 써서 하는데, conv 하면서 pooling&stride 같은 downsampling 이 주로 쓰여서, Upsampling이 필요함
+- Upsampling 을 하는 여러방법들이 있음 ( Unpooling , upsampling , Transpose convolution ) 
+- Downsampling 은 strided convolution 이나 pooling 
+ 
+## Classification + Localization 
+- Localization 은 이미지내에 객체가 오직 한개라고 가정함
+- FC Layer 하나 더 두고, output dimension 4로 함 ( width,height,x,y )
+
+## Object Detection 
+- 고양이, 개 물고기 등 고정된 카테고리 갯수만 고려
+- 특정범위를 관찰하여 classification 하는 방법 -> 특정범위를 어떻게 잡을건데? 매우 난감...
+- Region Proposal Network : Object 가 있을법한 BBox 제공
+   ( Selective Search : 2000개의 Region Proposal 만듬 , 2000개 만들고서 input dimension은 고정해줘야함)                
+   ( Region Proposal 가지고 CNN 하는것이 R-CNN )        
+   ( ConvNet 통과시키고 Feature map 가지고 Region Proposal 만드는것이 Fast R-CNN )         
+- YOLO : 입력이미지를 큼지막히 나눔, 각 셀에 Base BBox가 세가지 있고, 길쭉 넓죽 정사각형 , 으로 classification하면서 BBox 변형
+
+
+
+
+
+
 
