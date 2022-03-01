@@ -167,12 +167,18 @@
 ![스크린샷 2022-03-01 오전 11 40 31](https://user-images.githubusercontent.com/98244339/156094381-648150e4-5101-4fa5-879c-92fe7b3446fe.png)
 
 ## LSTM 
-- 한 cell당 2개의 hidden state 가 있음 
+- 한 cell당 2개의 hidden state 가 있음   
   ( h_t : 기존 RNN의 hidden )
   ( c_t : LSTM내부에만 존재하며 노출되지 않음 )
-- input x(t) , h(t-1) 을 받고 -> 4개의 gate (i,f,o,g) 생성 -> (i,f,o,g)를 이용하여 c_t 업데이트 -> c_t 이용하여 h_t 업데이트
-![image](https://user-images.githubusercontent.com/98244339/156098881-1a8ca860-678c-4d99-8d0f-af268d4a4ab0.png)
-
+- ⓐ input x_t , h_t-1 을 받고 
+- ⓑ h_t-1 과 x_t 와 큰 가중치 행렬을 곱하여 4개의 gate (i,f,o,g) 생성
+     ( i : input gate , i 는 현재 입력 x_t에 대한 가중치 (cell에 얼마나 현재 input을 넣을지) , sigmoid 사용 )
+     ( g : gate gate , input cell을 얼마나 포함시킬지, tanh 사용 )
+     ( f : forget gate , 이전 스텝의 cell 정보를 얼마나 망각할지 , sigmoid 사용 )
+     ( o : output gate , c_t를 얼마나 밖으로 드러내보일지 (각 스템에서 hidden state를 계산할때 cell을 얼마나 노출시킬지), sigmoid 사용 )
+- ⓒ (i,f,o,g)를 이용하여 c_t 업데이트 -> c_t 이용하여 h_t 업데이트
+![연습장-15](https://user-images.githubusercontent.com/98244339/156103249-eacce0f1-834b-4788-9ddb-4f52d18785e1.jpg)
+![연습장-16](https://user-images.githubusercontent.com/98244339/156103259-d4adce7a-3bdd-4411-828a-1e912c647baf.jpg)
 
 
 
