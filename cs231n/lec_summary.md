@@ -96,6 +96,45 @@
 - pooling : fiter가 slide 되면서 계산한것중 최댓값 혹은 평균을 잡아서 사이즈 줄이고 특징을 잡아낸다. ( 일종의 Downsample )
 ![IMG_34B68039D87F-1](https://user-images.githubusercontent.com/98244339/150666461-65903c13-20db-4ab6-85c1-62b1c02bf1b3.jpeg)
 
+
+# CNN Architecture
+
+## AlexNet
+- 최초의 Large Scale CNN
+- Convnet 연구 돌풍일으킴
+- 파라미터 60M 개 
+![스크린샷 2022-03-01 오전 8 54 15](https://user-images.githubusercontent.com/98244339/156078637-bbd590b1-a37b-4858-a280-9600e49196cf.png)
+
+## VGGNet
+- 더 깊어지고 더 작은 filter 사용.
+- 메모리 사용량이 많은 편이라고 함.
+- local Response Normalization 을 사용하지 않음 ( AlexNet 에서 사용되었음 ) 
+- 16 or 19 layer 
+- 3*3 filter 주로사용하고, pooling 사용 ( 작은 fiilter 사용하는이유 : 파라미터 수가 적고, depth 키울 수 있음. )
+- 파라미터 128M 개
+![스크린샷 2022-03-01 오전 9 02 44](https://user-images.githubusercontent.com/98244339/156079379-eb10fc34-b54d-4df1-93a8-23d3088a58b6.png)
+
+## GoogleNet
+- 22 layer
+- FC layer 가 없음 ( 파라미터 줄이기 위해, 파라미터 5M개 )
+- Inception module을 여러개 쌓아서 만듬
+  ( Inception module ? : network 내의 network 개념으로 local network 라고 함 )
+  ( 서로다른 필터들이 병렬로 계산하고, 한번에 합침 -> 계산량이 많아짐.. )
+  Bottleneck Layers의 사용 ( 계산량이 많아지는 문제 -> 각 레이어의 계산량을  1*1 conv 를 통해서 dimension 을 줄여준다 )
+  ![스크린샷 2022-03-01 오전 9 25 15](https://user-images.githubusercontent.com/98244339/156081354-c7d4a07a-645a-414b-8397-6f7302d2d82a.png)
+![연습장-13](https://user-images.githubusercontent.com/98244339/156082013-1db3da9b-82ab-4511-b2ca-9d12bf4ab131.jpg)
+
+## ResNet
+- 매우 깊은 네트워크 152layer
+- 가설 : 모델이 깊어질수록 최적화가 어렵다.
+- Residual block : h(x) = f(x) + x 로두고, h(x) 학습시키는것은 어려우니 f(x) 학습시키고 x를 더하자 ( 입력값을 어떻게 수정해야하는지 보는것임 ) 
+- Residual block 에서 모델 depth 가 50 이상일때는 GoogleNet과 같은 Bottleneck Layer 사용하자
+- 아래와같은 reusiauel block 을 쌓아올리자 
+![연습장-14](https://user-images.githubusercontent.com/98244339/156083242-b206b2a7-6f54-4242-b3d4-6b4fdb0b1711.jpg)
+![스크린샷 2022-03-01 오전 9 54 42](https://user-images.githubusercontent.com/98244339/156084146-2331d052-1f63-42e9-9470-6b1727374012.png)
+
+
+
 ## 중요예제 문제
 - Input 7*7 , Filter 3*3 , Stride 1 , padding 1 ===> what is output?
 - ANSWER IS : ( N - F ) / Stride + 1  = 7 
