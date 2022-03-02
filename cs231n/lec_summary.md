@@ -258,6 +258,12 @@
 ## Variational AutoEncoders
 - 직접 계산이 불가능한 확률모델 정의
 
+## GAN
+- 입력으로 random noise 벡터 (z) -> Generator Network 통과하면 샘플출력 
+- generator : 사실적인 이미지를 생성하여 discriminator 를 속이는것
+- discriminator : 입력이미지가 실제인지 거짓인지 구분
+- discriminaotr가 잘 구분한다면, generaotr는 discriminator 를 속이는 만큼 학습한다.
+![스크린샷 2022-03-02 오전 11 37 55](https://user-images.githubusercontent.com/98244339/156284223-b23f5ac3-ad25-4371-bb4f-8c7cfed3f57f.png)
 
 
 ## ============================================
