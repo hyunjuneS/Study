@@ -1,21 +1,19 @@
-# Nearest Neighbor 
+# DeepLearning Basic
+
+## Nearest Neighbor 
 - Train 단계에서는 아무일도 하지 않고, 단지 모든 데이터를 기억만한다.
 - Test 단계에서는 기억한 데이터중에서 가장 유사한데이터를 찾는다.
 - 비교하는 방법에는 L1 Distance & L2 Distance 가 있다. ( 하기 참조 )
 - Nearest Neighobors 의 단점을 보완하고자 K-Nearest Neigobors 등장 ( 가까운 이웃을 k개만큼 찾고 투표를 통해 결정 )
 
-# Image Classifier & Loss Functions
-
-- Manhattan distance (L1) vs Euclidean distance (L2)
+##Manhattan distance (L1) vs Euclidean distance (L2)
 - L1 Distance는 좌표계에 많은 영향을 받는다. 그래서, 벡터간 요소들이 개별적 의미를 가지고 있다면, L1 Distance가 어울린다.
 ![IMG_CF046D7D79F0-1](https://user-images.githubusercontent.com/98244339/150664933-7639c166-8340-4ca6-92d4-1f8f8918510a.jpeg)
 
-
-# Linear Classifier : y = wx + b
+## Linear Classifier : y = wx + b
 ![IMG_B931D09E9F5B-1](https://user-images.githubusercontent.com/98244339/150664945-1222acc0-fba4-490b-a1ce-92eb764a7529.jpeg)
 
-
-# Linear Classifier 의 loss는 SVM과 Softmax 크게 두종류
+## Loss Function : SVM과 Softmax 크게 두종류
 - loss function : "모델의 예측값이 정답값에 비해 얼마나 구린지" 측정
 - SVM Loss : MAX ( 0 , 잘못예측한 클래스 점수 - 정답 클래스 점수 +1 )의 합계의 평균 / 1은 margin 으로 설정가능 / hinge loss
 - Softmax : 스코어 자체애대한 해석은 고려하지 않음 / 클래스별 로그, 지수, 표준화 적용,  Cross Entropy /  확률 결과 return , 합은 항상 1
@@ -23,15 +21,15 @@
 ![스크린샷 2022-02-28 오전 10 04 15](https://user-images.githubusercontent.com/98244339/155908503-5c984ed1-8e24-4c4c-b5f2-7835d49e47d8.png)
 
 
-# Regularization : Loss에 특정 값을 붙여서 Overfitting 을 방지한다.( 모델이 Train data에 완벽히 FIT 하지 못하도록 모델의 복잡도에 패널티부여 )
-- 보통 L2 Regularization을 사용한다. 
+## Regularization 
+- Loss에 특정 값을 붙여서 Overfitting 을 방지한다.( 모델이 Train data에 완벽히 FIT 하지 못하도록 모델의 복잡도에 패널티부여 )
+- 보통 L2 Regularization을 사용한다.         
 <img width="955" alt="스크린샷 2022-02-28 오전 10 36 39" src="https://user-images.githubusercontent.com/98244339/155910461-93652bf4-f931-46d2-9e4d-723d579ef5a5.png">
-- 아래그림은 딥러닝홀로서기에서 Regularization 에 대한 부가설명으로 그린 그림인데, 이해하기 좋아 첨부.  
-       
+- 아래그림은 딥러닝홀로서기에서 Regularization 에 대한 부가설명으로 그린 그림인데, 이해하기 좋아 첨부.            
 ![IMG_F99F26FA99C8-1 복사본](https://user-images.githubusercontent.com/98244339/150665662-fd69d119-430e-41eb-9ba4-8beff355736e.jpeg)
 
 
-# Optimization
+## Optimization
 - Gradient Descent : gradient를 계산해서 loss를 찾아간다. GD의경우 한번 업데이트 될때, 전체 Train Data를 input으로넣어 전체 error를 구하는데에 시간이 오래듬
 - Stochastic Gradient Descent : 전체 데이터가 아닌 minibatch만 가지고 gradient를 계산해서 내려감, 파라미터가 많아졌을때 불균형한 방향이 증가하여 매우 복잡해지고,로컬 minimum 또는 변곡점에서 멈춤 
 - Momentum : SGD에 속도를 붙여서
@@ -226,10 +224,10 @@
 
 ## Gradient Ascent
 - 네트워크의 가중치는 모두 고정
-- Gradient Ascent 를 통해, 중간 뉴런 or 클래스스코어를 최대화 시키는 이미지 픽셀 만듬
-- Regularization 을 추가 ( ⓶ 을 위해서 하는듯 .. )
-  ⓵ 이미지가 특정 뉴런의 값을 최대화시키는 방향으로 생성되길 원함
-  ⓶ 이미지가 자연스러워야됨 ( 일반적으로 볼 수 있는 이미지이길 원하는것임 )
+- Gradient Ascent 를 통해, 중간 뉴런 or 클래스스코어를 최대화 시키는 이미지 픽셀 만듬                   
+- Regularization 을 추가 ( ⓶ 을 위해서 하는듯 .. )               
+  ⓵ 이미지가 특정 뉴런의 값을 최대화시키는 방향으로 생성되길 원함                    
+  ⓶ 이미지가 자연스러워야됨 ( 일반적으로 볼 수 있는 이미지이길 원하는것임 )                    
 
 
 ## ============================================
