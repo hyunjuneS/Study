@@ -6,7 +6,7 @@
 - 비교하는 방법에는 L1 Distance & L2 Distance 가 있다. ( 하기 참조 )
 - Nearest Neighobors 의 단점을 보완하고자 K-Nearest Neigobors 등장 ( 가까운 이웃을 k개만큼 찾고 투표를 통해 결정 )
 
-##Manhattan distance (L1) vs Euclidean distance (L2)
+## Manhattan distance (L1) vs Euclidean distance (L2)
 - L1 Distance는 좌표계에 많은 영향을 받는다. 그래서, 벡터간 요소들이 개별적 의미를 가지고 있다면, L1 Distance가 어울린다.
 ![IMG_CF046D7D79F0-1](https://user-images.githubusercontent.com/98244339/150664933-7639c166-8340-4ca6-92d4-1f8f8918510a.jpeg)
 
@@ -41,8 +41,8 @@
 
 ## ============================================
 
-
 # Network Training 
+
 ## Activation Function
 - Sigmoid 가 가진 큰 문제 2가지 : Zero-Centered되지 않음  & 양/음값이 너무 커지면 기울기가 0으로 소실됨 ( Saturation )
 - Zero-Centered : Activation Function 이 Zero-Centered 되어있지 않으면, gradient 값이 음수 or 양수로 치우쳐서 나온다.
