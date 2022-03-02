@@ -205,6 +205,32 @@
    ( ConvNet 통과시키고 Feature map 가지고 Region Proposal 만드는것이 Fast R-CNN )         
 - YOLO : 입력이미지를 큼지막히 나눔, 각 셀에 Base BBox가 세가지 있고, 길쭉 넓죽 정사각형 , 으로 classification하면서 BBox 변형
 
+## Instance Segmentation
+- Sementic Segmentation 과 Object Detection 합작
+
+
+## ============================================
+
+# Visualizaing and Understanding 
+- CNN의 filter가 이미지에 어떠한 특이점을 추출하는지 봄
+
+## Occlusion Experiments
+- 이미지에 특정 patch 가린것을 stride해가면서, patch의 위치에따른 prediction 확률변화를 봄
+- 어디에 patch가 위치할때 스코어가 크게변하면, 그 부분이 classification 에 중요한 부분이었다는것을 짐작
+
+## Saliency Maps
+- 입력이미지를 classification 한 뒤에, 네트워크가 어떤 픽셀들을 보고서 classification 했는지 찾기위함
+- 입력이미지의 각 픽셀들에 대해, 예측한 클래스 스코어의 그래디언트를 계산 -> 어떤 픽셀이 영향력 있는지 보여줌
+- 입력이미지의 픽셀을 조금 바꾸었을때, 클래스의 스코어가 얼마나 바뀌는지 봄                  
+( Guided backprop : 입력이미지의 각 픽셀에 대해, 중간 뉴런의 그래디언트를 계산해서 -> 어떤 픽셀이 중간 뉴런에 영향력이 있는지 보여주는것 )
+
+## Gradient Ascent
+- 네트워크의 가중치는 모두 고정
+- Gradient Ascent 를 통해, 중간 뉴런 or 클래스스코어를 최대화 시키는 이미지 픽셀 만듬
+- Regularization 을 추가 ( ⓶ 을 위해서 하는듯 .. )
+  ⓵ 이미지가 특정 뉴런의 값을 최대화시키는 방향으로 생성되길 원함
+  ⓶ 이미지가 자연스러워야됨 ( 일반적으로 볼 수 있는 이미지이길 원하는것임 )
+
 
 ## ============================================
 
