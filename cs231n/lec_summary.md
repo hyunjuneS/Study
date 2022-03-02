@@ -232,6 +232,36 @@
 
 ## ============================================
 
+# Generative Models
+
+## pixelRNN / CNN 
+- likelihood 를 최대화 하기위해 chain-rule 사용 ( 관련있는 픽셀을 찾기위한 과정이라는 것인가...? / likelihood : 사건이 일어날 가능도 )  
+- pixelRNN : 왼쪽 위 픽셀부터 대각선 아래방향으로 내려가면서 픽셀들을 생성 / feed forward문 여러번해야돼서 매우느림
+- pixelCNN : pixelRNN과 유사하게 왼쪽 코너부터 픽셀 생성 / 모든 종속성을 고려하는것 대신 , 특정영역에서 CNN 사용 ( 픽셀을 생성할때 특정 픽셀만 고려 ) / 좀더 빠르긴함
+![스크린샷 2022-03-02 오전 10 16 29](https://user-images.githubusercontent.com/98244339/156276168-3840c24a-c3fb-46ef-a659-90dcdf89fbbd.png)
+![스크린샷 2022-03-02 오전 10 19 36](https://user-images.githubusercontent.com/98244339/156277206-b1258930-b28a-4702-ba52-a0195e316f4e.png)
+
+## AutoEncoder
+- 레이블되지 않은 train data로부터, 대표 features를, 학습하기위한 비지도학습 방법
+- 입력을 복원하는 과정에서 특징을 잘 학습하고, 학습된 특징은 지도학습의 라벨 초기화에 이용
+- AE룰 통해 차원축소의 효과가 있기도함
+[ AutoEncoder 세부 ]
+- z가 데이터 x의 중요한 특징을 학습하기 원함
+- 동일한차원의 데이터복원 
+- 디코더와 인코더는 동일한구조, 대칭적, 주로 cnn 사용
+- loss를 계산할때만 디코더가 쓰이고, 학습이 끝나면 디코더는 버린다. ( 학습할때는 l2 loss 사용 , 복원된 이미지의 픽셀과 입력이미지의 픽셀이 같았으면 좋겠음! ) 
+- test에서는 classifier한다면, softmax 와 predicted라벨 연결해서 쓴다. 
+![연습장-17](https://user-images.githubusercontent.com/98244339/156279738-3a1c6e53-d238-46c6-9ada-184c1bee85d7.jpg)
+
+
+
+## Variational AutoEncoders
+- 직접 계산이 불가능한 확률모델 정의
+
+
+
+## ============================================
+
 
 # Reinforcement Learning 
 ![스크린샷 2022-02-28 오후 5 12 39](https://user-images.githubusercontent.com/98244339/155947694-5a97dba4-dc5a-4e61-9658-cedf751fdb2f.png)
