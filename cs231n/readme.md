@@ -103,11 +103,12 @@
 ![IMG_34B68039D87F-1](https://user-images.githubusercontent.com/98244339/150666461-65903c13-20db-4ab6-85c1-62b1c02bf1b3.jpeg)
 
 ## 중요예제 문제
-- Input 7*7 , Filter 3*3 , Stride 1 , padding 1 ===> what is output?
-- ANSWER IS : ( N - F ) / Stride + 1  = 7 
-- N : 7 + 2 ( padding 1 이 2개 ) & F : 3  & Stride 1.
-![연습장-11](https://user-images.githubusercontent.com/98244339/155914003-498ebfa8-f1cd-4544-b32c-f3b4ee4b4476.jpg)
+- Input 7*7 , Filter 3*3 , Stride 1 , padding 1 ===> what is output?                       
+- ANSWER IS : ( N - F ) / Stride + 1  = 7                     
+- N : 7 + 2 ( padding 1 이 2개 ) & F : 3  & Stride 1.                       
 ## 실제 Assignment2 에서 구현했던 N=32 , F=5, Pad=2 , Stride =1  => output 32 나옴 
+
+![연습장-11](https://user-images.githubusercontent.com/98244339/155914003-498ebfa8-f1cd-4544-b32c-f3b4ee4b4476.jpg)
 
 
 ## ============================================
