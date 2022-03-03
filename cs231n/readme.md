@@ -259,7 +259,13 @@
 
 
 ## Variational AutoEncoders
-- 직접 계산이 불가능한 확률모델 정의
+- 직접 계산이 불가능한 확률모델 정의 
+- encoder , decoder 가 평균과 공분산 값을 반환해서, pixel rnn 처럼 likelihood 높게 이미지생성 
+<img width="1321" alt="image" src="https://user-images.githubusercontent.com/98244339/156671132-8957d783-c175-4d63-9678-faa6515ddf19.png">
+
+
+
+
 
 ## GAN
 - 입력으로 random noise 벡터 (z) -> Generator Network 통과하면 샘플출력 
