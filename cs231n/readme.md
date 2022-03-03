@@ -25,7 +25,8 @@
 - Loss에 특정 값을 붙여서 Overfitting 을 방지한다.( 모델이 Train data에 완벽히 FIT 하지 못하도록 모델의 복잡도에 패널티부여 )
 - 보통 L2 Regularization을 사용한다.         
 <img width="955" alt="스크린샷 2022-02-28 오전 10 36 39" src="https://user-images.githubusercontent.com/98244339/155910461-93652bf4-f931-46d2-9e4d-723d579ef5a5.png">
-- 아래그림은 딥러닝홀로서기에서 Regularization 에 대한 부가설명으로 그린 그림인데, 이해하기 좋아 첨부.            
+- 아래그림은 딥러닝홀로서기에서 Regularization 에 대한 부가설명으로 그린 그림인데, 이해하기 좋아 첨부.
+
 ![IMG_F99F26FA99C8-1 복사본](https://user-images.githubusercontent.com/98244339/150665662-fd69d119-430e-41eb-9ba4-8beff355736e.jpeg)
 
 
