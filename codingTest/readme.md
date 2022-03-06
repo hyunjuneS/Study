@@ -14,5 +14,6 @@ for p , s in zip(progresses, speeds):
     
     
 ## pop 
-
+list = [1,2,3,4]
+lst.pop(0) 
 
