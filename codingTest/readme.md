@@ -4,13 +4,14 @@
 - sorted(dic['pop'], key=lambda x:x[1], reverse=True)
 
 ## zip
-progresses = [93, 30, 55]
-speeds = [1, 30, 5]
-for p , s in zip(progresses, speeds):
-    print(p, "    " , s)
-=> 	93      1
-    30      30
-    55      5
+progresses = [93, 30, 55]                            
+speeds = [1, 30, 5]                   
+for p , s in zip(progresses, speeds):                              
+    print(p, "    " , s)                           
+=> 	93      1                        
+    30      30                          
+    55      5                           
+    
     
 ##
 
