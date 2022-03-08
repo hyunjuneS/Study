@@ -13,6 +13,7 @@
 - x = np.linspace(0,10,11) : 0부터 10까지 숫자를 11개로 나누어서 배열로 넣는다 [0,1,2,3,4,5,6,7,8,9,10]
 - assert 가정문 : assert 뒤에 조건문이 참이 아니면 에러발생시킴 
 - np.random.randn(3,2) : 3행 2열로, 0~1가우시안 분포값들 랜덤으로 뽑아냄
+- np.random.rand(3,2) : 0~1 표준정규분포 난수를 array(m,n) 만큼 생성 , 여기서 size 는 3,2 로 된다.
 - np.random.randint(3 , size = (3,2)) : 3행2열로 0,1,2 값 랜덤으로 추출
 - np.random.normal( loc , scale , size. ) : loc 평균, scale : 표준편차 , size 사이즈
 - np.square : 제곱 & np.sqrt : 루트 &
